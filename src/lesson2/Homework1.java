@@ -70,6 +70,12 @@ public class Homework1 {
         //Задача №2
         //Посчитать (a+b)^2 = ?, при a=3, b=5
 
+        //Решение
+        int a = 3;
+        int b = 5;
+        int summa = a + b;
+        System.out.println(summa * summa);
+
         //Задача №3
         //Создать два массив чисел:
         // 1,2,5,7,10
