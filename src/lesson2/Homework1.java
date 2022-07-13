@@ -67,6 +67,17 @@ public class Homework1 {
         //Задача №1
         //Произвести преобразование текста "234" в число типа int и прибавить к этому числу длину строки "some_text"
 
+        //Решение
+        String str1 = "234";
+        int i = Integer.parseInt(str1.trim());
+        //System.out.println("int i = " + i);
+        String str2 = "some_text";
+        int len = str2.length();
+        //System.out.println("Длина строки = " + len);
+        int sum = i + len;
+
+        System.out.println("Результат преобразования текста и длины= " + (sum));
+
         //Задача №2
         //Посчитать (a+b)^2 = ?, при a=3, b=5
 
@@ -88,8 +99,47 @@ public class Homework1 {
         //(первый массив - 1,2,5,7,10), (второй массив - 2,3,2,17,15),
         //(результат перемножения - (1*2), (2*3), (5*2), (7*17), (10*15)
 
+        //Решение
+        int[] numbers1 = new int[]{1,2,5,7,10};
+        int[] numbers2 = new int[]{2,3,2,17,15};
+        int[] massive = new int[]{0,0,0,0,0,0,0,0,0,0,0,0,0,0,0};
+        massive[0] = numbers1[0];
+        massive[1] = numbers1[1];
+        massive[2] = numbers1[2];
+        massive[3] = numbers1[3];
+        massive[4] = numbers1[4];
+        massive[5] = numbers2[0];
+        massive[6] = numbers2[1];
+        massive[7] = numbers2[2];
+        massive[8] = numbers2[3];
+        massive[9] = numbers2[4];
+        massive[10] = numbers1[0] * numbers2[0];
+        massive[11] = numbers1[1] * numbers2[1];
+        massive[12] = numbers1[2] * numbers2[2];
+        massive[13] = numbers1[3] * numbers2[3];
+        massive[14] = numbers1[4] * numbers2[4];
+
+        System.out.println(Arrays.toString(massive));
+
+
         //Задача №4
-        //В слове "Hello world!" заменить l на r, сделать все буквы заглавными, выбрать первые 8 символов, вывести на экран
+        //В слове "Hello world!" заменить l на r, сделать все буквы заглавными, выбрать первые 8 символов, вывести на экра
+        // System.out.println(dst); // world
+
+        //Решение
+        String hello = "Hello world!";
+        String helloChange = hello.replaceAll("l", "r");
+        String helloUpper = hello.toUpperCase();
+        String helloRazor = hello.substring(0, 8);
+        int start = 6;
+        int end = 11;
+        char[] dst=new char[end - start];
+        hello.getChars(start, end, dst, 0);
+
+        //System.out.println(helloChange);
+        //System.out.println(helloUpper);
+        //System.out.println(helloRazor);
+        System.out.println(dst);
 
         //Экспертный уровень
         //Задача №1
