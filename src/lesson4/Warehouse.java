@@ -37,4 +37,5 @@ public class Warehouse {
     public void setQuantityPieces(int newQuantity) {
         this.quantity = newQuantity;
     }
+
 }
