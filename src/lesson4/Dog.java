@@ -8,6 +8,7 @@ public class Dog {
     public String name;
     public String breed;
 
+
     //Конструктор экземпляра класса
     public Dog(String dogName, String dogBreed) {
         this.name = dogName;

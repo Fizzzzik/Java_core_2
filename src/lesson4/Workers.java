@@ -23,7 +23,6 @@ public class Workers {
         System.out.println(this.name + ": Ура! Я испортил водку!");
         //System.out.println(this.defective + ": всего");
     }
-
   //  public void sayHura() {
       //  System.out.println(this.name + ": Ура! Я испортил водку!");
         //this.defective = defective + 1;
