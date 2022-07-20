@@ -77,6 +77,18 @@ public class HomeworkTasks {
 
         //Решение
 
+        Dog palkan = new Dog("Palkan", "Bull Mastiff");
+        Dog dork = new Dog("Dork", "Beagle");
+        Cat vasya = new Cat("Vasya", "Maine coon");
+        Cat rizhik = new Cat("Rizhik", "Sphynx");
+
+        System.out.println(palkan.getName());
+        System.out.println(dork.getName());
+        System.out.println(vasya.getName());
+        System.out.println(rizhik.getName());
+
+        vasya.setName("Ventilyator");
+        System.out.println(vasya.getName());
 
 
 
