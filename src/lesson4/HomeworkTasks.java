@@ -1,5 +1,7 @@
 package lesson4;
 
+import java.util.Arrays;
+
 public class HomeworkTasks {
     public static void main(String[] args) {
 
@@ -12,6 +14,9 @@ public class HomeworkTasks {
         for (int i = 1; i <= 100; i++) {
             System.out.print(i + "a ");
         }
+        System.out.println('\n');
+        // переход на другую строку, чтобы корректно отображались результаты по 2 задаче
+
 
         // Задание №2
         // Дано:
@@ -23,8 +28,7 @@ public class HomeworkTasks {
         // Проверьте работоспособность условий, через изменение значения переменной.
 
         //Решение
-        System.out.println('\n');
-        // переход на другую строку, чтобы корректно отображались результаты по 2 задаче
+
 
         if (ageChildren < 6) {
             System.out.println("пошел в сад");
@@ -40,10 +44,10 @@ public class HomeworkTasks {
         // Задание №3
         // Дано:
         boolean chicken = false;
-        boolean vegetables = false;
-        boolean sour = false;
+        boolean vegetables = true;
+        boolean sour = true;
         boolean toast = true;
-        boolean sausage = false;
+        boolean sausage = true;
         boolean eggs = true;
         // Задача: Повара попросили сделать салат.
         // Если у повара есть все ингредиенты для "Цезаря" (курица, овощи, соус и гренки), то лучше сделать "Цезарь".
@@ -55,9 +59,9 @@ public class HomeworkTasks {
         // Проверьте работоспособность условий, через изменение значения переменных.
 
         //Решение
-        if (chicken && vegetables && sausage && toast) {
+        if (chicken && vegetables && sour && toast) {
             System.out.println("Салат Цезарь");
-        } else if (vegetables && eggs && (sour || chicken)) {
+        } else if (vegetables && eggs && (sausage || chicken)) {
             System.out.println("Салат Оливье");
         } else if (vegetables) {
             System.out.println("Овощной салат");
@@ -76,15 +80,15 @@ public class HomeworkTasks {
 
 
 
-            // Продвинутый уровень
-            // Задание №1: Написать цикл, который будет прибавлять число к result до тех пор,
-            // пока не получиться больше 1_000_000.
-            // Дано:
-            double increment = 20.6767;
-            double result = 0;
-            // Вывести на экран, количество итераций, которое потребовалось, чтобы дойти до миллиона.
-            // Если число отрицательное, то сразу заканчиваем цикл, ничего не выводя.
-            // Внимание: число может измениться, и не должно приводить к изменению вашего кода.
+        // Продвинутый уровень
+        // Задание №1: Написать цикл, который будет прибавлять число к result до тех пор,
+        // пока не получиться больше 1_000_000.
+        // Дано:
+        double increment = 20.6767;
+        double result = 0;
+        // Вывести на экран, количество итераций, которое потребовалось, чтобы дойти до миллиона.
+        // Если число отрицательное, то сразу заканчиваем цикл, ничего не выводя.
+        // Внимание: число может измениться, и не должно приводить к изменению вашего кода.
 
         // Решение
         int i = 0;
@@ -99,18 +103,29 @@ public class HomeworkTasks {
             }
         }
 
-            // Задание №2: Дан массив единиц, произвольной длины. Создать цикл, который заменяет каждый четный элемент на 0;
-            // Например, дано: [1,1,1,1,1]
-            // Ожидаемый результат: [0,1,0,1,0]
-            // Подсказка: прочитай про операнд "%".
+        // Задание №2: Дан массив единиц, произвольной длины. Создать цикл, который заменяет каждый четный элемент на 0;
+        // Например, дано: [1,1,1,1,1]
+        // Ожидаемый результат: [0,1,0,1,0]
+        // Подсказка: прочитай про операнд "%".
+
+        // Решение
+        int[] ints1 = {1,1,1,1,1,1};
+        int[] resultInts = new int[ints1.length];
+
+        for (int k = 0; k < ints1.length; k++) {
+            String strToPrint = "ints1[" + k + "]=" + ints1[k];
+            resultInts[k] = k % 2;
+        }
+        System.out.println(Arrays.toString(resultInts));
+
 
             // Задание №3:
             // Дано:
             boolean hasFuel = true;
             boolean hasElectricsProblem = false;
-            boolean hasMotorProblem = false;
-            boolean hasTransmissionProblem = true;
-            boolean hasWheelsProblem = true;
+            boolean hasMotorProblem = true;
+            boolean hasTransmissionProblem = false;
+            boolean hasWheelsProblem = false;
             // В автосервис приехала сломанная машина. Механики находят неисправность следующим способом:
             // Если у машины нет бензина и ничего не сломано, то отдают машину владельцу и берут 1000 рублей за консультацию.
             // Если у машины проблема с двигателем, то чинят и берут 10 000.
@@ -123,6 +138,40 @@ public class HomeworkTasks {
             // Ситуации, что бензин есть и ничего не сломано - быть не может.
             // Ожидаемый результат: выведен на экран счет клиенту.
 
+        // Решение
+        int i1 = hasFuel ? 1 : 0;
+        int i2 = hasElectricsProblem ? 1 : 0;
+        int i3 = hasMotorProblem ? 1 : 0;
+        int i4 = hasTransmissionProblem ? 1 : 0;
+        int i5 = hasWheelsProblem ? 1 : 0;
+
+        if (!hasFuel && !hasElectricsProblem && !hasMotorProblem && !hasTransmissionProblem && !hasWheelsProblem) {
+            int price1 = 1000;
+            System.out.println("Залили бензин. Консультация, руб = " + price1);
+        } else if (hasFuel && !hasElectricsProblem && hasMotorProblem && !hasTransmissionProblem && !hasWheelsProblem ) {
+            int price2 = 10000;
+            System.out.println("Починка двигателя, руб = " + price2);
+        } else if (hasFuel && hasElectricsProblem && !hasMotorProblem && !hasTransmissionProblem && !hasWheelsProblem) {
+            int price3 = 5000;
+            System.out.println("Починка электрики, руб = " + price3);
+        } else if (hasFuel && !hasElectricsProblem && !hasMotorProblem && hasTransmissionProblem && !hasWheelsProblem) {
+            int price4 = 4000;
+            System.out.println("Починка коробки, руб = " + price4);
+        } else if (hasFuel && !hasElectricsProblem && !hasMotorProblem && !hasTransmissionProblem && hasWheelsProblem) {
+            int price5 = 2000;
+            System.out.println("Починка колес, руб = " + price5);
+        } else if (hasFuel && hasElectricsProblem && hasMotorProblem && hasTransmissionProblem && hasWheelsProblem) {
+            float totalprice1 = (i2 * 5000 + i3 * 10000 + i4 * 4000 + i5 * 2000) * 0.9f;
+            System.out.println("Замена всех деталей со скидкой 10%, руб = " + totalprice1);
+        } else if (hasFuel && (hasElectricsProblem || hasMotorProblem) && hasTransmissionProblem) {
+            float totalprice2 = (i2 * 5000 + i3 * 10000 + i4 * 4000 + i5 * 2000) * 0.8f;
+            System.out.println("Починка коробки и эл-ки или двигателя со скидкой 20%, руб = " + totalprice2);
+        } else if (!hasFuel && (hasElectricsProblem || hasMotorProblem || hasTransmissionProblem || hasWheelsProblem )) {
+            float totalprice3 = i1 * 1000 + i2 * 5000 + i3 * 10000 + i4 * 4000 + i5 * 2000;
+            System.out.println("Что-то сломано. Консультация = 0 руб. Всего, руб = " + totalprice3 );
+        } else {
+            System.out.println("Такой ситуации быть не может");
+        }
             // Задание №4:
             // Написать систему управления складскими запасами. Создать класс склад, создать класс работники
             // (написать геттеры на все аттрибуты).
