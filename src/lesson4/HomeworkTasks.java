@@ -147,7 +147,7 @@ public class HomeworkTasks {
             // Задание №3:
             // Дано:
             boolean hasFuel = true;
-            boolean hasElectricsProblem = false;
+            boolean hasElectricsProblem = true;
             boolean hasMotorProblem = true;
             boolean hasTransmissionProblem = false;
             boolean hasWheelsProblem = false;
@@ -171,6 +171,9 @@ public class HomeworkTasks {
         int i3 = hasMotorProblem ? 1 : 0;
         int i4 = hasTransmissionProblem ? 1 : 0;
         int i5 = hasWheelsProblem ? 1 : 0;
+        int x = (i2 + i3 + i4 + i5);
+        boolean hasProblem2Details = true == ((i2 + i3 + i4 + i5) == 2);
+       // System.out.println(x);
 
         if (!hasFuel && !hasElectricsProblem && !hasMotorProblem && !hasTransmissionProblem && !hasWheelsProblem) {
             int price1 = 1000;
@@ -187,9 +190,9 @@ public class HomeworkTasks {
         } else if (hasFuel && !hasElectricsProblem && !hasMotorProblem && !hasTransmissionProblem && hasWheelsProblem) {
             int price5 = 2000;
             System.out.println("Починка колес, руб = " + price5);
-        } else if (hasFuel && hasElectricsProblem && hasMotorProblem && hasTransmissionProblem && hasWheelsProblem) {
+        } else if (hasFuel && (hasProblem2Details)) {
             float totalprice1 = (i2 * 5000 + i3 * 10000 + i4 * 4000 + i5 * 2000) * 0.9f;
-            System.out.println("Замена всех деталей со скидкой 10%, руб = " + totalprice1);
+            System.out.println("Замена двух деталей со скидкой 10%, руб = " + totalprice1);
         } else if (hasFuel && (hasElectricsProblem || hasMotorProblem) && hasTransmissionProblem) {
             float totalprice2 = (i2 * 5000 + i3 * 10000 + i4 * 4000 + i5 * 2000) * 0.8f;
             System.out.println("Починка коробки и эл-ки или двигателя со скидкой 20%, руб = " + totalprice2);
