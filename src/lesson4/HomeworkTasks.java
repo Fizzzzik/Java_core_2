@@ -190,12 +190,12 @@ public class HomeworkTasks {
         } else if (hasFuel && !hasElectricsProblem && !hasMotorProblem && !hasTransmissionProblem && hasWheelsProblem) {
             int price5 = 2000;
             System.out.println("Починка колес, руб = " + price5);
-        } else if (hasFuel && (hasProblem2Details)) {
-            float totalprice1 = (i2 * 5000 + i3 * 10000 + i4 * 4000 + i5 * 2000) * 0.9f;
-            System.out.println("Замена двух деталей со скидкой 10%, руб = " + totalprice1);
         } else if (hasFuel && (hasElectricsProblem || hasMotorProblem) && hasTransmissionProblem) {
             float totalprice2 = (i2 * 5000 + i3 * 10000 + i4 * 4000 + i5 * 2000) * 0.8f;
             System.out.println("Починка коробки и эл-ки или двигателя со скидкой 20%, руб = " + totalprice2);
+        } else if (hasFuel && (hasProblem2Details)) {
+            float totalprice1 = (i2 * 5000 + i3 * 10000 + i4 * 4000 + i5 * 2000) * 0.9f;
+            System.out.println("Замена двух деталей со скидкой 10%, руб = " + totalprice1);
         } else if (!hasFuel && (hasElectricsProblem || hasMotorProblem || hasTransmissionProblem || hasWheelsProblem )) {
             float totalprice3 = i1 * 1000 + i2 * 5000 + i3 * 10000 + i4 * 4000 + i5 * 2000;
             System.out.println("Что-то сломано. Консультация = 0 руб. Всего, руб = " + totalprice3 );
